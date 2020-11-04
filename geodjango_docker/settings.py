@@ -99,8 +99,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 
-# Set DEPLOY_SECURE to True only for LIVE deployment
-# if docker_config.DEPLOY_SECURE:
 DEBUG = False
 TEMPLATES[0]["OPTIONS"]["debug"] = False
 ALLOWED_HOSTS = ['www.joelkell.xyz', 'localhost', ]
@@ -108,23 +106,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_SAMESITE = 'None'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-# else:
-# DEBUG = True
-# TEMPLATES[0]["OPTIONS"]["debug"] = True
-# ALLOWED_HOSTS = ['*', ]
-# CSRF_COOKIE_SECURE = False
-# SESSION_COOKIE_SECURE = False
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
-
-# STATIC_URL = 'http://localhost:28001/static/'
-# STATIC_URL = f"http://localhost:{docker_config.NGINXPORT}/static/"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
